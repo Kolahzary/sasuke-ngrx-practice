@@ -7,6 +7,11 @@ dependencies:
   '@angular/platform-browser': 8.2.14_ecb0ad61817e3ede6ce462931a5e5041
   '@angular/platform-browser-dynamic': 8.2.14_4c5c48e73106d2e9b7131da2a9d6eb8e
   '@angular/router': 8.2.14_e94a473af1c39c32436b93512d471216
+  '@ngrx/effects': 8.6.0_340ac93f2aa43acbe06123684aff945a
+  '@ngrx/router-store': 8.6.0_a4a9618665075671d69f0b7021c2b27f
+  '@ngrx/store': 8.6.0_@angular+core@8.2.14+rxjs@6.4.0
+  '@ngrx/store-devtools': 9.0.0_@ngrx+store@8.6.0+rxjs@6.4.0
+  immer: 6.0.2
   rxjs: 6.4.0
   tslib: 1.11.1
   zone.js: 0.9.1
@@ -1132,6 +1137,54 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
+  /@ngrx/effects/8.6.0_340ac93f2aa43acbe06123684aff945a:
+    dependencies:
+      '@angular/core': 8.2.14_rxjs@6.4.0+zone.js@0.9.1
+      '@ngrx/store': 8.6.0_@angular+core@8.2.14+rxjs@6.4.0
+      rxjs: 6.4.0
+    dev: false
+    peerDependencies:
+      '@angular/core': ^8.0.0
+      '@ngrx/store': 8.6.0
+      rxjs: ^6.4.0
+    resolution:
+      integrity: sha512-JdyJLQbv/wnE0ZPY9DcDOtF9PzJuzsKWmIWgIGunHF18wdjk5O8Zpkcrxq18wDRL6geg5UTtNJRMvTQhpDbzow==
+  /@ngrx/router-store/8.6.0_a4a9618665075671d69f0b7021c2b27f:
+    dependencies:
+      '@angular/common': 8.2.14_@angular+core@8.2.14+rxjs@6.4.0
+      '@angular/core': 8.2.14_rxjs@6.4.0+zone.js@0.9.1
+      '@angular/router': 8.2.14_e94a473af1c39c32436b93512d471216
+      '@ngrx/store': 8.6.0_@angular+core@8.2.14+rxjs@6.4.0
+      rxjs: 6.4.0
+    dev: false
+    peerDependencies:
+      '@angular/common': ^8.0.0
+      '@angular/core': ^8.0.0
+      '@angular/router': ^8.0.0
+      '@ngrx/store': 8.6.0
+      rxjs: ^6.4.0
+    resolution:
+      integrity: sha512-4Dvl6dfOj15lNZ63wucRNcTEHUi0hEqapOBVRslfAsnaSRo2t1lOvfX7b68IbxPiqzabTBdIeEkJwAC2q/rZZg==
+  /@ngrx/store-devtools/9.0.0_@ngrx+store@8.6.0+rxjs@6.4.0:
+    dependencies:
+      '@ngrx/store': 8.6.0_@angular+core@8.2.14+rxjs@6.4.0
+      rxjs: 6.4.0
+    dev: false
+    peerDependencies:
+      '@ngrx/store': 9.0.0
+      rxjs: ^6.5.3
+    resolution:
+      integrity: sha512-Vj8sj8GclbSbnYCS8eqZXTOYDdip1nnjKhkYClUg2oFPh67haaCmvh7TXITnX8PpgDtj5akF84Xw9/1HRiG8mg==
+  /@ngrx/store/8.6.0_@angular+core@8.2.14+rxjs@6.4.0:
+    dependencies:
+      '@angular/core': 8.2.14_rxjs@6.4.0+zone.js@0.9.1
+      rxjs: 6.4.0
+    dev: false
+    peerDependencies:
+      '@angular/core': ^8.0.0
+      rxjs: ^6.4.0
+    resolution:
+      integrity: sha512-K4cvCEa+5hw9qrETQWO+Cha3YbVCAT8yaIKJr/N35KntTL9mQMjoL+51JWLZfBwPV0e19CFgJIyrBnVUTxwr2A==
   /@ngtools/webpack/8.3.25_177969776f9abbb18f72b9c4c5822988:
     dependencies:
       '@angular-devkit/core': 8.3.25
@@ -3985,6 +4038,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
+  /immer/6.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-56CMvUMZl4kkWJFFUe1TjBgGbyb9ibzpLyHD+RSKSVdytuDXgT/HXO1S+GJVywMVl5neGTdAogoR15eRVEd10Q==
   /import-cwd/2.1.0:
     dependencies:
       import-from: 2.1.0
@@ -8115,10 +8172,15 @@ specifiers:
   '@angular/platform-browser': ~8.2.14
   '@angular/platform-browser-dynamic': ~8.2.14
   '@angular/router': ~8.2.14
+  '@ngrx/effects': 8.6.0
+  '@ngrx/router-store': 8.6.0
+  '@ngrx/store': 8.6.0
+  '@ngrx/store-devtools': ^9.0.0
   '@types/jasmine': ~3.3.8
   '@types/jasminewd2': ~2.0.3
   '@types/node': ~8.9.4
   codelyzer: ^5.0.0
+  immer: ^6.0.2
   jasmine-core: ~3.4.0
   jasmine-spec-reporter: ~4.2.1
   karma: ~4.1.0
