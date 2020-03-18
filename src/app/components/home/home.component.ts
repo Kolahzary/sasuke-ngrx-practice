@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { State } from "src/app/state";
-import * as actions from "../../actions/counter.actions";
+import { HomeActions } from "../../actions";
 import { interval, Subscription } from "rxjs";
 
 @Component({
@@ -10,13 +10,35 @@ import { interval, Subscription } from "rxjs";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  private _interval: number;
+  get interval(): number {
+    return this._interval;
+  }
+  set interval(value: number) {
+    this.store.dispatch(HomeActions.setInterval({ value }));
+  }
+
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
-    this.store.dispatch(actions.start({ interval: 1000 }));
+    this.store
+      .select(x => x.counter.interval)
+      .subscribe(value => {
+        this._interval = value;
+      });
   }
 
-  ngOnDestroy() {
-    this.store.dispatch(actions.stop());
+  ngOnDestroy() {}
+
+  startIncrement(): void {
+    this.store.dispatch(HomeActions.startIncrement());
+  }
+
+  startDecrement(): void {
+    this.store.dispatch(HomeActions.startDecrement());
+  }
+
+  stop(): void {
+    this.store.dispatch(HomeActions.stop());
   }
 }

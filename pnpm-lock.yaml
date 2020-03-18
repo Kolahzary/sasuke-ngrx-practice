@@ -12,6 +12,7 @@ dependencies:
   '@ngrx/store': 8.6.0_@angular+core@8.2.14+rxjs@6.4.0
   '@ngrx/store-devtools': 9.0.0_@ngrx+store@8.6.0+rxjs@6.4.0
   immer: 6.0.2
+  lodash: 4.17.15
   rxjs: 6.4.0
   tslib: 1.11.1
   zone.js: 0.9.1
@@ -22,6 +23,7 @@ devDependencies:
   '@angular/language-service': 8.2.14
   '@types/jasmine': 3.3.16
   '@types/jasminewd2': 2.0.8
+  '@types/lodash': 4.14.149
   '@types/node': 8.9.5
   codelyzer: 5.2.1_b87c8e5f48461a714a9ebadb5a329028
   jasmine-core: 3.4.0
@@ -1253,6 +1255,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-d9p31r7Nxk0ZH0U39PTH0hiDlJ+qNVGjlt1ucOoTUptxb2v+Y5VMnsxfwN+i3hK4yQnqBi3FMmoMFcd1JHDxdg==
+  /@types/lodash/4.14.149:
+    dev: true
+    resolution:
+      integrity: sha512-ijGqzZt/b7BfzcK9vTrS6MFljQRPn5BFWOx8oE0GYxribu6uV+aA9zZuXI1zc/etK9E8nrgdoF2+LgUw7+9tJQ==
   /@types/minimatch/3.0.3:
     dev: true
     resolution:
@@ -4937,7 +4943,6 @@ packages:
     resolution:
       integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
   /lodash/4.17.15:
-    dev: true
     resolution:
       integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
   /log4js/4.5.1:
@@ -8178,6 +8183,7 @@ specifiers:
   '@ngrx/store-devtools': ^9.0.0
   '@types/jasmine': ~3.3.8
   '@types/jasminewd2': ~2.0.3
+  '@types/lodash': ^4.14.149
   '@types/node': ~8.9.4
   codelyzer: ^5.0.0
   immer: ^6.0.2
@@ -8188,6 +8194,7 @@ specifiers:
   karma-coverage-istanbul-reporter: ~2.0.1
   karma-jasmine: ~2.0.1
   karma-jasmine-html-reporter: ^1.4.0
+  lodash: ^4.17.15
   protractor: ~5.4.0
   rxjs: ~6.4.0
   ts-node: ~7.0.0

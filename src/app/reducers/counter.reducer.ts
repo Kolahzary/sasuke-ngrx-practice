@@ -1,32 +1,59 @@
 import { createReducer, on, Action } from "@ngrx/store";
 
-import { increment, decrement, reset, set } from "../actions/counter.actions";
+import { CounterActions, HomeActions } from "../actions";
 import { CounterState } from "../state/counter.state";
 import produce from "immer";
 
 const initialState: CounterState = {
-  count: 0
+  started: true,
+  inverse: false,
+  count: 10,
+  interval: 1000
 };
 
-export const counterReducer = produce((draft: CounterState, action) => {
-  switch (action.type) {
-    case increment.type:
+export const counterReducer = createReducer(
+  initialState,
+  on(CounterActions.increment, current =>
+    produce(current, draft => {
       draft.count++;
-      break;
-
-    case decrement.type:
+    })
+  ),
+  on(CounterActions.decrement, current =>
+    produce(current, draft => {
       draft.count--;
-      break;
-
-    case reset.type:
+    })
+  ),
+  on(CounterActions.reset, current =>
+    produce(current, draft => {
       draft.count = 0;
-      break;
-
-    case set.type:
+    })
+  ),
+  on(CounterActions.set, (current, action) =>
+    produce(current, draft => {
       draft.count = action.count;
-      break;
+    })
+  ),
 
-    default:
-      break;
-  }
-}, initialState);
+  on(HomeActions.setInterval, (current, action) =>
+    produce(current, draft => {
+      draft.interval = action.value;
+    })
+  ),
+  on(HomeActions.startIncrement, (current, action) =>
+    produce(current, draft => {
+      draft.started = true;
+      draft.inverse = false;
+    })
+  ),
+  on(HomeActions.startDecrement, (current, action) =>
+    produce(current, draft => {
+      draft.started = true;
+      draft.inverse = true;
+    })
+  ),
+  on(HomeActions.stop, (current, action) =>
+    produce(current, draft => {
+      draft.started = false;
+    })
+  )
+);

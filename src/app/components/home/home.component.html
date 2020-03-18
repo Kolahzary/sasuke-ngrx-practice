@@ -1,1 +1,9 @@
 <p>home works!</p>
+<label>
+  Interval:
+  <input type="number" [(ngModel)]="interval" />
+</label>
+<br />
+<button (click)="startIncrement()">Start Increment</button>
+<button (click)="startDecrement()">Start Decrement</button>
+<button (click)="stop()">Stop</button>
