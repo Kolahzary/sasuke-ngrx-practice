@@ -24,7 +24,7 @@
     "@ngrx/router-store": "^9.0.0",
     "@ngrx/store": "^9.0.0",
     "@ngrx/store-devtools": "^9.0.0",
-    "immer": "^8.0.1",
+    "immer": "^9.0.6",
     "lodash": "^4.17.15",
     "lodash.isequal": "^4.5.0",
     "rxjs": "^6.5.4",
